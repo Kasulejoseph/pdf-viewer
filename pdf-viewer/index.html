@@ -2,51 +2,32 @@
 <html>
 <head>
   <title>Welcome to Vue</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
   <div id="app">
-    <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
-    <h1>{{ greeting }}</h1>
-    <ul>
-      <li>
-        To learn more about Vue, visit
-        <a :href="docsURL" target="_blank">
-          {{ humanizeURL(docsURL) }}
-        </a>
-      </li>
-      <li>
-        For live help with simple questions, check out
-        <a :href="discordURL" target="_blank">
-          the Discord chat
-        </a>
-      </li>
-      <li>
-        For more complex questions, post to
-        <a :href="forumURL" target="_blank">
-          the forum
-        </a>
-      </li>
-    </ul>
+   <div class="container">
+     <h3 class="text-center" style="color:#fff;">PDF Viewer</h3>
+     <div class="row">
+       <div class="col-md-6 col-md-offset-3" v-if="file">
+          <img :src="preview" alt="" srcset="" class="preview">
+       </div>
+     </div>
+     <div class="row pages">
+        <div class="col-md-4" v-for="page in pages">
+          <img :src="page.url" alt="" class="img-responsive" @click="selecImage(page.page)">
+        </div>
+     </div>
+     <div class="row upload" v-if="!file">
+      <div class="col-md-offset-4 col-md-4">
+        <button @click="openWidget()">Upload PDF</button>
+      </div>
+     </div>
+   </div>
   </div>
-
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        greeting: 'Welcome to your Vue.js app!',
-        docsURL: 'http://vuejs.org/guide/',
-        discordURL: 'https://chat.vuejs.org',
-        forumURL: 'http://forum.vuejs.org/'
-      },
-      methods: {
-        humanizeURL: function (url) {
-          return url
-            .replace(/^https?:\/\//, '')
-            .replace(/\/$/, '')
-        }
-      }
-    })
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.7.4/cloudinary-core-shrinkwrap.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

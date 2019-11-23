@@ -1,0 +1,38 @@
+html, body, #app, .container {
+    height: 100%;
+  }
+
+  .preview {
+    margin-top: 40px;
+  }
+
+  .preview {
+    margin-top: 40px;
+  }
+  img {
+    display: block;
+    margin: auto;
+    border: #E1E1E1;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.3);
+  }
+  
+  .upload {
+    margin-top: 30%;
+    margin-left: 14%;
+  }
+
+  button {
+    color: #687DDB;
+    padding: 10px 15px;
+    border: #e1e1e1;
+    background: #fff;
+    border-radius: 4px;
+  }
+  
+  #app {
+    background: #687DDB;
+  }
+
+  .pages {
+    margin-top: 20px
+  }
