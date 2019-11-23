@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Welcome to Vue</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue"></script>
 </head>
+
 <body>
   <div id="app">
-   <div class="container">
-     <h3 class="text-center" style="color:#fff;">PDF Viewer</h3>
-     <div class="row">
-       <div class="col-md-6 col-md-offset-3">
+    <div class="container">
+      <h3 class="text-center" style="color:#fff;">PDF Viewer</h3>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3 prev">
+            <i class="fa fa-caret-left" style="color:#fff;" @click="prev()"></i>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
           <img :src="preview" alt="" srcset="" class="preview">
-       </div>
-     </div>
-     <div class="row pages">
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 next">
+            <i class="fa fa-caret-right" style="color:#fff;" @click="next()"></i>
+        </div>
+      </div>
+      <div class="row pages">
         <div class="col-md-4" v-for="page in pages">
           <img :src="page.url" alt="" class="img-responsive" @click="selectImage(page.page)">
         </div>
-     </div>
-     <div class="row upload" v-if="!file">
-      <div class="col-md-offset-4 col-md-4">
-        <button @click="openWidget()">Upload PDF</button>
       </div>
-     </div>
-   </div>
+      <div class="row upload" v-if="!file">
+        <div class="col-md-offset-4 col-md-4">
+          <button @click="openWidget()">Upload PDF</button>
+        </div>
+      </div>
+    </div>
   </div>
-<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-<script src="script.js"></script>
+  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
