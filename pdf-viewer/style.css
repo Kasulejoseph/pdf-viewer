@@ -29,10 +29,17 @@ html, body, #app, .container {
     border-radius: 4px;
   }
   
-  #app {
+  body {
     background: #687DDB;
   }
 
   .pages {
-    margin-top: 20px
+    margin-top: 20px;
+    height: 400px;
+    overflow: scroll;
+  }
+
+  .pages img{
+    margin-top: 10px;
+    cursor: pointer;
   }
