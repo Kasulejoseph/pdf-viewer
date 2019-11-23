@@ -9,6 +9,19 @@ html, body, #app, .container {
   .preview {
     margin-top: 40px;
   }
+  
+  .prev, .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .prev i, .next i {
+    display: block;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+  }
   img {
     display: block;
     margin: auto;
